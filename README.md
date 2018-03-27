@@ -25,14 +25,16 @@ More specifically build a page similar to [this one](https://codepen.io/freeCode
   This element is used for the actual content of the technical documentation page. Content which is structured in several `section` elements with `class="main-section"`. 
 
   In these sections the content of the page should present itself through:
+  
+  - `header` elements, each with an id aptly referring to the header's text;
+  
+  - `p` elements, which describe the text of the technical documentation;
+  
+  - `code` elements, displaying code-formatted text;
+  
+  - `li` elements, to include some sort of list.
+  
 
-    - `header` elements, each with an id aptly referring to the header's text;
-
-    - `p` elements, which describe the text of the technical documentation;
-
-    - `code` elements, displaying code-formatted text;
-
-    - `li` elements, to include some sort of list.
   
 ## First thoughts
 
