@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Technical Documentation Page</title>
+  <meta name="description" content="Simple page built for the beta curriculum @freeCodeCamp.">
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+
+<!-- define SVG asset -->
+<svg style="display: none;">
+  <defs>
+      <symbol id="atom-icon" viewBox="0 0 100 85"><g transform="matrix(.65195 0 0 .61627 -12.729 -13.708)"><g transform="translate(0 -74.832)" fill="none" stroke="#61daff" stroke-width="2.646" stroke-opacity=".941"><ellipse cx=".307" cy="191.902" rx="35.28" ry="75.37" transform="rotate(-30)"/><ellipse transform="rotate(30)" ry="75.37" rx="35.28" cy="95.685" cx="166.345"/><ellipse transform="rotate(-90)" ry="75.37" rx="35.28" cy="96.217" cx="-166.038"/></g><circle r="24.589" cy="91.206" cx="96.217" fill="#61daff" fill-opacity=".941"/></g></symbol>
+  </defs>
+</svg> 
+
+
+<!-- divide the entire project in navigation bar and main section  -->
+<div class="app">
+
+  <!-- navigation bar is to be displayed on the top for small size devices, on the left side otherwise-->
+  <nav id="navbar">
+    <!-- header with text and an icon -->
+    <header>
+      React
+      <svg class="atom-icon">
+        <use xlink:href="#atom-icon">
+      </svg>
+    </header>
+    <!-- anchor links directing through the page -->
+    <a href="#Hello_World" class="nav-link">Hello World</a>
+    <a href="#Introducing_JSX" class="nav-link">Introducing JSX</a>
+    <a href="#Rendering_Elements" class="nav-link">Rendering Elements</a>
+    <a href="#Components_and_Props" class="nav-link">Components and Props</a>
+    <a href="#State_and_Lifecycle" class="nav-link">State and Lifecycle</a>
+  </nav>
+
+  <!--   
+  main container consisting of five sections, 
+  each with text presented in headers and paragraphs
+  each with code nested in a container div and presented one line at a time through an unordered list 
+  each with a direct reference to the actual documentation page
+
+  unordered list in which
+  - escape characters are included for <opening and >closing tags
+  - keywords are styled in spans to simulate the scripting language
+  -->
+  <main id="main-doc">
+
+    <section class="main-section" id="Hello_World">
+
+      <header>Hello World</header>
+
+      <p>The smallest React example looks like this:</p>
+
+      <code>
+        <ul>
+          <li>ReactDOM<span class="js-code">.render(</span></li>
+          <li><span class="html-markup">&lt;h1&gt;</span>Hello, world!<span class="html-markup">&lt;/h1&gt;</span></li>
+          <li>document<span class="js-code">.getElementById</span>(<span class="string-quote">'root'</span>)</li>
+          <li>);</li>
+        </ul>
+      </code>
+
+      <p>It renders a heading saying “Hello, world!” on the page.</p>
+      <p>The next few sections will gradually introduce you to using React. We will examine the building blocks of React apps: elements and components. Once you master them, you can create complex apps from small reusable pieces.</p>
+      
+
+      <h2>A Note on JavaScript</h2>
+
+      <p>React is a JavaScript library, and so we’ll assume you have a basic understanding of the JavaScript language. If you don’t feel very confident, we recommend refreshing your JavaScript knowledge so you can follow along more easily.</p>
+      <p>We also use some of the ES6 syntax in the examples. We try to use it sparingly because it’s still relatively new, but we encourage you to get familiar with arrow functions, classes, template literals, let, and const statements. You can use the Babel REPL to check what ES6 code compiles to.</p>
+
+      <a class="read-more" href="https://reactjs.org/docs/hello-world.html">
+        <h3>Read more</h3>
+      </a>
+
+    </section>
+
+
+    <section class="main-section" id="Introducing_JSX">
+
+      <header>Introducing JSX</header>
+
+      <code>
+        <ul>
+          <li><span class="js-keyword">const</span> element = <span class="html-markup">&lt;h1&gt;</span>Hello, world<span class="html-markup">&lt;/h1&gt;</span>;</li>
+        </ul>
+      </code>
+
+      <p>This funny tag syntax is neither a string nor HTML.</p>
+      <p>It is called JSX, and it is a syntax extension to JavaScript. We recommend using it with React to describe what the UI should look like. JSX may remind you of a template language, but it comes with the full power of JavaScript.</p>
+      <p>JSX produces React “elements”. We will explore rendering them to the DOM in the next section. Below, you can find the basics of JSX necessary to get you started.</p>
+
+      <h2>Why JSX?</h2>
+
+      <p>React embraces the fact that rendering logic is inherently coupled with other UI logic: how events are handled, how the state changes over time, and how the data is prepared for display.</p>
+      <p>Instead of artificially separating technologies by putting markup and logic in separate files, React separates concerns with loosely coupled units called “components” that contain both. We will come back to components in a further section, but if you’re not yet comfortable putting markup in JS, this talk might convince you otherwise.</p>
+      <p>React doesn’t require using JSX, but most people find it helpful as a visual aid when working with UI inside the JavaScript code. It also allows React to show more useful error and warning messages.</p>
+      
+      <a class="read-more" href="https://reactjs.org/docs/introducing-jsx.html">
+        <h3>Read more</h3>
+      </a>
+
+    </section>
+  
+
+    <section class="main-section" id="Rendering_Elements">
+
+      <header>Rendering Elements</header>
+
+      <p>An element describes what you want to see on the screen:</p>
+
+      <code>
+        <ul>
+          <li><span class="js-keyword">const</span> element = <span class="html-markup">&lt;h1&gt;</span>Hello, world<span class="html-markup">&lt;/h1&gt;</span>;</li>
+        </ul>
+      </code>
+
+      <p>Unlike browser DOM elements, React elements are plain objects, and are cheap to create. React DOM takes care of updating the DOM to match the React elements.</p>
+
+      <div class="note-container">
+        <h2>Note:</h2>
+        <p>One might confuse elements with a more widely known concept of “components”. We will introduce components in the next section. Elements are what components are “made of”, and we encourage you to read this section before jumping ahead.</p>
+      </div>
+
+      <h2>Rendering an Element into the DOM</h2>
+
+      <p>Let’s say there is a &lt;div&gt; somewhere in your HTML file:</p>
+
+      <code>
+        <ul>
+          <li><span class="html-markup">&lt;div</span> id="root"<span class="html-markup">&gt;&lt;/div&gt;</span></li>
+        </ul>
+      </code>
+
+      <p>We call this a “root” DOM node because everything inside it will be managed by React DOM.</p>
+      <p>Applications built with just React usually have a single root DOM node. If you are integrating React into an existing app, you may have as many isolated root DOM nodes as you like.</p>
+      <p>To render a React element into a root DOM node, pass both to <span class="js-code">ReactDOM.render()</span>:</p>
+
+      <code>
+        <ul>
+          <li><span class="js-keyword">const</span> element = <span class="html-markup">&lt;h1&gt;</span>Hello, world<span class="html-markup">&lt;/h1&gt;</span>;</li>
+          <li>ReactDOM<span class="js-code">.render</span>(element, document<span class="js-code">.getElementById</span>(<span class="string-quote">'root'</span>));</li>
+        </ul>
+      </code>
+
+      <p>It displays “Hello, world” on the page.</p>
+
+      <a class="read-more" href="https://reactjs.org/docs/rendering-elements.html">
+        <h3>Read more</h3>
+      </a>
+
+    </section>
+    
+    
+    <section class="main-section" id="Components_and_Props">
+
+      <header>Components and Props</header>
+
+      <p>Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.</p>
+      
+      <h2>Functional and Class Components</h2>
+
+      <p>The simplest way to define a component is to write a JavaScript function:</p>
+
+      <code>
+        <ul>
+          <li><span class="js-keyword">function</span> <span class="js-code">Welcome</span>(props) {</li>
+          <li><span class="js-keyword">return</span> <span class="html-markup">&lt;h1&gt;</span>Hello, {props.name}<span class="html-markup">&lt;/h1&gt;</span>;</li>
+          <li>}</li>
+        </ul>
+      </code>
+
+      <p>This function is a valid React component because it accepts a single “props” (which stands for properties) object argument with data and returns a React element. We call such components “functional” because they are literally JavaScript functions.</p>
+
+      <p>You can also use an ES6 class to define a component:</p>
+
+      <code>
+        <ul>
+          <li><span class="js-keyword">class</span> Welcome <span class="js-keyword">extends</span> React.Component {</li>
+          <li><span class="js-code">render</span>() {</li>
+          <li><span class="js-keyword">return</span> <span class="html-markup">&lt;h1&gt;</span>Hello, {<span class="js-keyword">this</span>.props.name}<span class="html-markup">&lt;/h1&gt;</span>;</li>
+          <li>}</li>
+          <li>}</li>
+        </ul>
+      </code>
+
+      <p>The above two components are equivalent from React’s point of view.</p>
+      <p>Classes have some additional features that we will discuss in the next sections. Until then, we will use functional components for their conciseness.</p>
+      
+      <a class="read-more" href="https://reactjs.org/docs/components-and-props.html">
+        <h3>Read more</h3>
+      </a>
+
+    </section>
+    
+    
+    <section class="main-section" id="State_and_Lifecycle">
+      
+      <header>State and Lifecycle</header>
+
+      <p>So far we have only learned one way to update the UI.</p>
+      <p>We call <span class="js-code">ReactDOM.render()</span> to change the rendered output:</p>
+
+      <code>
+        <ul>
+          <li><span class="js-keyword">function</span> <span class="js-code">tick</span>() {</li>
+          <li><span class="js-keyword">const</span> element = (</li>
+          <li><span class="html-markup">&lt;div&gt;</span></li>
+          <li><span class="html-markup">&lt;h1&gt;</span>Hello, world!<span class="html-markup">&lt;/h1&gt;</span></li>
+          <li><span class="html-markup">&lt;h2&gt;</span>It is {<span class="js-keyword">new</span> Date()<span class="js-code">.toLocaleTimeString</span>()}.<span class="html-markup">&lt;/h2&gt;</span></li>
+          <li><span class="html-markup">&lt;/div&gt;</span></li>
+          <li>);</li>
+          <li></li>
+          <li>ReactDOM<span class="js-code">.render</span>(</li>
+          <li>element,</li>
+          <li>document<span class="js-code">.getElementById</span>(<span class="string-quote">'root'</span>)</li>
+          <li>);</li>
+          <li>}</li>
+          <li></li>
+          <li><span class="js-code">setInterval</span>(tick<span class="js-code">, 1000</span>  );</li>
+        </ul>
+      </code>
+
+      <p>In this section, we will learn how to make the Clock component truly reusable and encapsulated. It will set up its own timer and update itself every second.</p>
+
+      <a class="read-more" href="https://reactjs.org/docs/state-and-lifecycle.html">
+        <h3>Read more</h3>
+      </a>
+
+    </section>
+
+  </main>
+
+</div><!-- close div wrapping the entire project -->
+  
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+}
+.app {
+  /* to lay the nav and main elements as wanted, make their wrapping container into a flex container */
+  display: flex;
+  /* push the flex items to the end of the container (to the right) as to display the main doc to the right of the fixed navbar*/
+  justify-content: flex-end;
+}
+
+#navbar {
+  /* lay the contents of the nav elements in a single column layout */
+  display: flex;
+  flex-direction: column;
+
+  /* fix the nav element to the left of the screen and stretch the container to occupy the entire height of the viewport */
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+  background-color: #14161a;
+  box-shadow: 1px 1px 3px #14161a;
+  padding: 1rem 1.2rem;
+  font-size: 1.3rem;
+  line-height: 2;
+}
+#navbar header {
+  color: #61dafb;
+}
+#navbar header svg.atom-icon {
+  width: 36px;
+  height: 36px;
+  margin: 0 0.5rem;
+  vertical-align: middle;
+}
+#navbar a.nav-link {
+  color: #ccc;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  transition: color 0.3s ease-out;
+}
+#navbar a.nav-link:hover {
+  color: #fff;
+}
+
+
+
+#main-doc {
+  /* lay the contents of the main element in a single column layout */
+  display: flex;
+  flex-direction: column;
+}
+/* space section elements from each other */
+.main-section {
+  padding: 0 3rem;
+  margin: 2rem 0 5rem;
+}
+.main-section header, .main-section h2 {
+  color: #282C34;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+.main-section header {
+  font-size: 3rem;
+}
+.main-section h2 {
+  font-size: 1.8rem;
+}
+
+.main-section p {
+  max-width: 800px;
+  font-size: 1.2rem;
+  line-height: 2;
+  margin: 1.5rem 0;
+}
+
+.main-section code {
+  max-width: 600px;
+  padding: 1rem 2rem;
+  color: #fff;
+  background-color: #282C34;
+  border-radius: 10px;
+  /* display block to change the default inline value and display correct the nested content */
+  display: block;
+}
+.main-section code ul {
+  margin: 0 0.5rem;
+  /* decimal list style as to provide a rough version of code lines*/
+  list-style: decimal;
+  line-height: 1.4;
+}
+
+.main-section code ul li {
+  /* border included to separate "code lines" from "code"  */
+  border-left: 1px solid #fff;
+  /* rough indentation introduced by pushing all list items except the first and the last to the right */
+  padding-left: 2.5rem;
+  font-size: 0.9rem;
+}
+.main-section code ul li:first-of-type, .main-section code ul li:last-of-type {
+  padding-left: 1rem;
+}
+
+.main-section .note-container {
+  max-width: 700px;
+  background-color: #fff7d0;
+  border-left: #ffe564 8px solid;
+  margin: 1rem 0;
+  padding: 0.2rem 1rem;
+}
+.main-section a.read-more {
+  text-decoration: underline;
+  color: #393f4b;
+  transition: color 0.3s ease-out;
+}
+.main-section a.read-more:hover {
+  color: #282c34;
+}
+
+
+/* classes to simulate the scripting language in the code snippets */
+.html-markup {
+  color: #D9808A;
+}
+.js-code {
+  color: #79B6F2;
+}
+.js-keyword {
+  color: #C5A5C5;
+}
+.string-quote {
+  color: #8dc891;
+}
+
+
+
+@media only screen and (max-width: 1100px) {
+  /* lay nav and main elements in a single column layout */
+  .app {
+    flex-direction: column;
+  }
+  #navbar {
+    /* change position of the navbar as this was altered to fixed for large screen sizes */
+    position: relative;
+    text-align: center;
+  }
+  #navbar a {
+    border-bottom: none;
+  }
+}
