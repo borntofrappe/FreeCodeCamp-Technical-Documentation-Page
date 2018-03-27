@@ -1,3 +1,5 @@
+Link to the working pen right [here](https://codepen.io/borntofrappe/full/VXrQdR/).
+
 # The Task
 
 > Complete the aptly named project in the beta curriculum @freecodecamp. 
@@ -42,5 +44,6 @@ Considerations regarding style are always present, even though rarely stressed, 
 
 # Lessons learned
 
+// TODO: include logic behind the choices made in the page
 
 
